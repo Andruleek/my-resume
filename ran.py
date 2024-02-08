@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from shutil import move
 from zipfile import ZipFile, BadZipFile
-import time
+import sys
 
 
 def normalize(filename):
@@ -83,7 +83,11 @@ def get_destination_folder(extension):
 
 
 def main():
-    folder_path = Path("C:/Users/Admin/Desktop/Модуль_6/my-resume/test_garbage_folder_no_nosuffix")
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <folder_path>")
+        return
+
+    folder_path = Path(sys.argv[1])
     sort_files(folder_path)
     extract_archives(folder_path / 'archives')
     print("All files sorted successfully.")
