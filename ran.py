@@ -83,7 +83,7 @@ def get_destination_folder(extension):
 
 
 def main():
-    folder_path = Path("C:/Users/Admin/Desktop/py/test_garbage_folder_no_nosuffix")
+    folder_path = Path("C:/Users/Admin/Desktop/Модуль_6/my-resume/test_garbage_folder_no_nosuffix")
     sort_files(folder_path)
     extract_archives(folder_path / 'archives')
     print("All files sorted successfully.")
